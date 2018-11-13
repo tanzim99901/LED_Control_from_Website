@@ -9,11 +9,11 @@ file_put_contents('value.html',$Write_outgoing);
 <html>
 	<head></head>
 	<body onload="GetButton2()">
-		<div>
+		<div class="center">
 			<!--<input type="button" id="LED2" onclick="GetButton1()" name="switch" color="red">-->
-			<button type="button" id="LED2" onclick="GetButton1()" color="red">SWITCH</button>
+			<button type="button" id="LED2" onclick="GetButton1()" color="red" style="height:200px;width:200px">SWITCH</button>
 		</div>
-		<div id="myText"></div>
+		<div class="center1" id="myText"></div>
     </body>
 	<script>
 		strLED1 = "";
@@ -44,3 +44,21 @@ file_put_contents('value.html',$Write_outgoing);
 		}
 	</script>
 </html>
+<style>
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.center1 {
+  margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
