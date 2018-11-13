@@ -7,7 +7,7 @@ String ssid = "Zeus";
 
 String password = "google123456";
 
-SoftwareSerial esp(62, 63);// RX, TX
+SoftwareSerial esp(10, 11);// RX, TX
 
 String data;
 String on_off;
@@ -16,9 +16,9 @@ String server = "tanzim99901.atwebpages.com"; // host website
 
 String get_html = "/value.html"; // html file from where the Switch state has to be read
 
-int whitepin = 23;
-int bluepin = 25;
-int redpin = 31; // this LED will be controlled from the website
+int whitepin = 5;
+int bluepin = 6;
+int redpin = 7; // this LED will be controlled from the website
 
 boolean connection = 0;
 
