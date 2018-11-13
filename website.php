@@ -1,9 +1,4 @@
 <?php
-$LED = isset($_POST["led"]) ? $_POST["led"] : "";
-//create a variable that will receive the state of LED
-$Write_incoming="<p>Status : " . $LED . " </p>";
-//create an HTML file to display the data within
-file_put_contents('sensor.html',$Write_incoming);
 if (isset($_GET["status"]))
 {
 	$Write_outgoing=$_GET["status"];
