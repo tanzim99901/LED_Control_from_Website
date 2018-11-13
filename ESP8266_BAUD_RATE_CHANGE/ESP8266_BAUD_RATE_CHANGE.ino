@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial SoftSerial(62, 63);  //RX,TX
+SoftwareSerial SoftSerial(10, 11);  //RX,TX
 char ssid[] = "Zeus";            // your network SSID (name)
 char pass[] = "google123456";        // your network password
 #define default_baud_rate 9600  // set this as the default baud rate of the ESP8266 module  
