@@ -13,12 +13,19 @@ How it works?
 3) An LED connected to the Arduino is turned “ON” or “OFF” according to the value retrieved from the web server. 
 
 ESP8266 ESP-01 Wifi module connections (connection diagram attached):
+
 The ESP8266 wifi module runs on 3.3V, but the Arduino provides 5V. So, a voltage divider circuit had to be made to provide power and signal to the ESP8266 module. The TX of ESP8266 can be directly connected to the RX of Arduino, since it only transmits FROM the ESP8266, but the TX of Arduino must be connected to the RX of ESP8266 through a voltage divider circuit, using resistors.
-For providing power to the ESP8266, a voltage regulator using LD1117V33 was used. It provides constant 3.3V, regardless of the input voltage (in this case it is an 9V battery). It should be noted here that, it could have been powered from the Arduino through the resistor-based voltage divider, but the Wifi module draws a lot of current, which cannot be provided by the Arduino. The connections are as follows: 
+
+For providing power to the ESP8266, a voltage regulator using LD1117V33 was used. It provides constant 3.3V, regardless of the input voltage (in this case it is an 9V battery). It should be noted here that, it could have been powered from the Arduino through the resistor-based voltage divider, but the Wifi module draws a lot of current, which cannot be provided by the Arduino. The connections are as follows:
+
 ESP TX --> Arduino D10 (SoftwareSerial RX)
+
 ESP RX --> voltage divider (resistor-based) --> Arduino D11 (SoftwareSerial TX)
+
 ESP VCC & ESP CH_PD --> voltage divider (LD1117V33) --> Battery(+)
+
 ESP GND --> Arduino GND and Battery(-)
+
 AT commands have been used to configure and send and receive data using the ESP8266 module. Main configuration done was changing the default Baud Rate of the ESP8266 module to 9600, since SoftwareSerial library of Arduino misbehaves at higher Baud Rates. 
 
 
