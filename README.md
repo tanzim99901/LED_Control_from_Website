@@ -2,17 +2,20 @@
 
 
 Turn an LED on or off from anywhere in the world from a website.
-Main components:
+
+# Main components:
+
 1) Any Arduino
 2) ESP8266 ESP-01 Wifi Module: https://techshopbd.com/product-categories/wifi/2583/esp8266-esp-01-wifi-module-techshop-bangladesh
 3) LEDs and resistors
 
-How it works?
+# How it works?
+
 1) A custom-built website contains a button, clicking on which changes a variable value from 1 to 0 and vice versa.
 2) The Arduino connects to the ESP8266 using the SoftwareSerial library and sends a “GET” request to the web server to retrieve the state of the button on the website, either 1 or 0.
 3) An LED connected to the Arduino is turned “ON” or “OFF” according to the value retrieved from the web server. 
 
-ESP8266 ESP-01 Wifi module connections (connection diagram attached):
+# ESP8266 ESP-01 Wifi module connections (connection diagram attached):
 
 The ESP8266 wifi module runs on 3.3V, but the Arduino provides 5V. So, a voltage divider circuit had to be made to provide power and signal to the ESP8266 module. The TX of ESP8266 can be directly connected to the RX of Arduino, since it only transmits FROM the ESP8266, but the TX of Arduino must be connected to the RX of ESP8266 through a voltage divider circuit, using resistors.
 
