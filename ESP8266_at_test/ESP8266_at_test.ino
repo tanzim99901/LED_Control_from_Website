@@ -1,11 +1,11 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(10, 11);  //RX,TX
+SoftwareSerial mySerial(10, 11);  // (RX of Arduino,TX of Arduino)
 
 void setup()
 {
-  Serial.begin(9600);     // communication with the host computer
-  while (!Serial.available());
+  Serial.begin(9600);     
+  while (!Serial.available());  // wait for serial monitor
 
   // Start the software serial for communication with the ESP8266
   mySerial.begin(9600); // set this according to the default baud rate of ESP8266
