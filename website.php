@@ -10,7 +10,6 @@ file_put_contents('value.html',$Write_outgoing);
 	<head></head>
 	<body onload="GetButton2()">
 		<div class="center">
-			<!--<input type="button" id="LED2" onclick="GetButton1()" name="switch" color="red">-->
 			<button type="button" id="LED2" onclick="GetButton1()" color="red" style="height:200px;width:200px">SWITCH</button>
 		</div>
 		<div class="center1" id="myText"></div>
@@ -34,13 +33,11 @@ file_put_contents('value.html',$Write_outgoing);
 			}
 			document.getElementById("myText").innerHTML = LED2_state;
 			window.location.href = "website.php?status=" + LED2_state;
-			//document.querySelector('.results').innerHTML = LED2_state;
 		}
 		function GetButton2()
 		{	
 			LED2_state = localStorage.getItem("state");
 			document.getElementById("myText").innerHTML = LED2_state;
-			//document.querySelector('.results').innerHTML = LED2_state;
 		}
 	</script>
 </html>
