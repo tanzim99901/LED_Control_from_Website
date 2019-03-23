@@ -1,9 +1,11 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial SoftSerial(10, 11);  //RX,TX
+
+SoftwareSerial SoftSerial(10, 11);  // (RX of Arduino,TX of Arduino)
 char ssid[] = "Zeus";            // your network SSID (name)
 char pass[] = "google123456";        // your network password
-#define default_baud_rate 9600  // set this as the default baud rate of the ESP8266 module  
+
+#define default_baud_rate 9600  // set this as the default baud rate of the ESP8266 module
 String target_baud_rate = "9600"; // set this as the baud rate you want to change into
 int target;
 
@@ -12,9 +14,12 @@ void setup()
   // Setup WiFI
   Serial.begin(9600);
   target  = target_baud_rate.toInt();
+  
   // initialize serial for ESP module
   SoftSerial.begin(default_baud_rate);
-  while(!Serial.available();
+  while(!Serial.available();    // wait for serial monitor
+
+  // reset module
   SoftSerial.println("AT+RST");
   Serial.println("AT+RST");
   char value;
@@ -23,6 +28,8 @@ void setup()
     Serial.println(value);
 
   }
+
+  // check AT commands
   SoftSerial.println(F("AT"));
   Serial.println(F("AT"));
   delay(1000);
@@ -33,7 +40,7 @@ void setup()
 
   }
 
-  // Baud rates above about 38,000 do not work reliably on the 328p (Pro Mini)
+  // change baud rate
   Serial.println("AT+UART_DEF=" + target_baud_rate + ",8,1,0,0");
   SoftSerial.println("AT+UART_DEF=" + target_baud_rate + ",8,1,0,0");
   delay(1000);
@@ -44,7 +51,7 @@ void setup()
     Serial.println(value);
 
   }
-  // Restart SoftwareSerial for the slower baud rate for the WiFi
+  // Restart SoftwareSerial for the new baud rate for the WiFi
 
   SoftSerial.end();
   SoftSerial.begin(target);
@@ -53,7 +60,7 @@ void setup()
 
 void loop()
 {
-  
+  // empty loop
 }
 
 
